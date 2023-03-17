@@ -1,0 +1,195 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": [
+        "refersTo",
+        "entities",
+        "relationships"
+    ],
+    "properties": {
+        "refersTo": {
+            "type": "string"
+        },
+        "entities": {
+            "type": "object",
+            "required": [
+                "bar",
+                "beer",
+                "drinker"
+            ],
+            "properties": {
+                "bar": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "bname",
+                            "city",
+                            "rating"
+                        ],
+                        "properties": {
+                            "bname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 20
+                            },
+                            "city": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 20
+                            },
+                            "rating": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 1
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "beer": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "rname",
+                            "origin"
+                        ],
+                        "properties": {
+                            "rname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 20
+                            },
+                            "origin": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 30
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "drinker": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "dname",
+                            "gender",
+                            "age"
+                        ],
+                        "properties": {
+                            "dname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 20
+                            },
+                            "gender": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 6
+                            },
+                            "age": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ],
+                                "maxLength": 3
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "relationships": {
+            "type": "object",
+            "properties": {
+                "frequents": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "dname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ]
+                            },
+                            "bname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "serves": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "bname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ]
+                            },
+                            "rname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ]
+                            },
+                            "price": {
+                                "type": "integer",
+                                "maxLength": 2
+                            }
+                        }
+                    }
+                },
+                "likes": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "dname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ]
+                            },
+                            "rname": {
+                                "type": [
+                                    "string",
+                                    "integer"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "additionalProperties": false
+    }
+}
